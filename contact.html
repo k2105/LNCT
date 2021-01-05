@@ -1,0 +1,191 @@
+
+  
+<!DOCTYPE html>
+<html>
+<head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<style>
+body {
+  background-image: url('phne.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+  
+    form {
+      text-align: center;
+      width: 85%;
+      background-color: gray;
+      color: white;
+      border-radius: 9pt;
+      padding: 5%;
+    }
+    input, textarea {
+      border-radius: 5pt;
+      width: 80%;
+      height: 5%;
+      border: 3px;
+      margin: 2px;
+    }
+  
+    input[type=submit] {
+      background-color: green;
+      color: white;
+      font-weight: bolder;
+    }
+    a, button {
+      text-decoration: none;
+      color: white;
+      background-color: blue;
+      border: none;
+      border-radius: 8pt;
+      padding: 1px 2px;
+      font-weight: bolder;
+      width: 30%;
+    }
+   
+@webkit-keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+@keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+@webkit-keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+      to {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+@keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+      to {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+    #contact {
+      text-align: center;
+    }
+    
+    h3 {
+      color: red;
+    }
+    h4{
+      color:black;
+    }
+  </style>
+</head>
+<body onload="showForm()" style="margin:5%;">
+  <div id="loader"></div>
+  <div style="display:none;" id="contact" class="animate-bottom">
+    <h3>Send an email</h3>
+    <form name="contact" method="post">
+      <label>Name</label><br>
+      <input type="text" name="name" required/><br>
+      <label>Subject</label><br>
+      <input type="text" name="subject" required/><br>
+      <label>Phone Number</label><br>
+      <input type="text" name="phone" required/><br>
+      <label>Address</label><br>
+      <input type="address" name="address" required/><br>
+      <label>Message</label><br>
+      <textarea name="message" required ></textarea><br>
+
+      <input type="submit" name="send" value="Send Message" />
+    </form>
+    <h3> OR </h3>
+    <a href="tel:7024268888"><span><button>
+        <h1>??</h1></button></span></a>
+  </div>
+  <script>
+  var form = document.forms["contact"];
+  form.addEventListener('submit', contact_submit, false);
+
+  function contact_submit(e) {
+    // Stop Form From Submitting
+    e.preventDefault();
+
+    // Set Initial Variables
+    var target = e.target || e.srcElement;
+    var to = 'lnctjabalpur@lnct.ac.in';
+    var uri = 'mailto:' + to;
+    var body = '';
+
+    // Set Form Values to Variables
+    var name = target.elements['name'].value;
+    var subject = target.elements['subject'].value;
+    var phone = target.elements['phone'].value;
+    var message = target.elements['message'].value;
+    var address = target.elements['address'].value;
+    // Build Body / Message with all Input Fields
+    body += message + "\r\n\r\n";
+    body += "Name: " + name + "\r\n";
+    body += "Phone Number: " + phone + "\r\n";
+    body += "Address: " + address + "\r\n";
+
+    // Build final Mailto URI
+    uri += '?subject=' + encodeURIComponent(subject);
+    uri += '&body=' + encodeURIComponent(body);
+
+    // Open Mailto in New Window / Tab
+    window.open(uri,
+      '_blank');
+  }
+</script>
+<script>
+var contactForm;
+function showForm() {
+  contactForm = setTimeout(showPage);
+}
+function showPage() {
+ document.getElementById("loader").style.display = "none";
+ document.getElementById("contact").style.display = "block";
+}
+</script>
+<h4>Add: LNCT Campus, Near Bhedaghat Chowk NH-45 (Old, NH-12, Jabalpur, Madhya Pradesh 482053</h4>
+<h4>CONTACT : 7024268888</h4>
+
+<h4>COLLEGE EMAIL : lnctjabalpur@lnct.ac.in
+</h4>
+<h4>ADMISSION : 7759992222</h4>
+
+<h4>HR : 9752410909</h4>
+
+<h4>T & P CELL : PH: 09752410904 </h4>  
+
+<h4>T & P EMAIL : tnpLnctjbp@lnct.ac.in</h4>
+<a href ="https://goo.gl/maps/K5tt7MqerAetMZaFA">Google Link</a>
+<br>
+<center>
+<a href="index.html" class="link-primary"><h4>HOME</h4></a>
+</center>
+</body>
+</html>
